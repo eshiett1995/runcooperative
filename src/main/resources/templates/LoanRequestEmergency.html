@@ -156,20 +156,7 @@
                     <div class="row">
                         <!--Grid column-->
                         <!--Grid column-->
-                        <div class="col-lg-4 col-md-12">
-
-                            <!--Name-->
-                            <select class="mdb-select" multiple = "multiple">
-                                <option value="" disabled="disabled" selected="selected">Title</option>
-                                <option value="1">Mr</option>
-                                <option value="2">Mrs</option>
-                                <option value="3">Miss</option>
-                            </select>
-
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-md-4 mb-r">
+                        <div class="col-md-6 mb-r">
 
                             <div class="md-form">
                                 <input type="text" id="form1" class="form-control"  th:field="*{firstname}"></input>
@@ -180,7 +167,7 @@
                         <!--Grid column-->
 
                         <!--Grid column-->
-                        <div class="col-md-4 mb-r">
+                        <div class="col-md-6 mb-r">
 
                             <div class="md-form">
                                 <input type="text" id="form1" class="form-control"  th:field="*{lastname}"></input>
@@ -287,6 +274,22 @@
 <script type="text/javascript" src="../../js/mdb.min.js"></script>
 
 <script type="text/javascript" src="../../js/vendor/sweetalert/sweetalert2.all.min.js"></script>
+
+<script>
+
+    function showalert(type,  message, title) {
+
+        swal(
+            title,
+            message,
+            type
+        )
+
+    }
+
+
+
+</script>
 
 <script>
     /*Global settings*/
@@ -514,6 +517,66 @@
     });
 </script>
 <!-- /.JVectorMap -->
+<th:block th:switch="${isSuccessful}">
+    <div th:case="'empty'">
+        <!-- print object is not active -->
+    </div>
+    <div th:case="'true'">
+        <script>
+
+            showalert("success","Loan Granted", "Loan Request");
+
+        </script>
+
+        <!-- print object is not active -->
+    </div>
+    <div th:case="'Cooperative balance not enough'">
+
+        <script>
+
+            showalert("error","Insufficient Funds", "Loan Request");
+
+        </script>
+        <!-- print object is new and active -->
+    </div>
+    <div th:case="'The maximum amount you can loan is a N100,000'">
+
+        <script>
+
+            showalert("error","The maximum amount you can loan is a N100,000", "Loan Request");
+
+        </script>
+        <!-- print object is new and active -->
+    </div>
+
+    <div th:case="'No customer found'">
+
+        <script th:inline="javascript">
+
+            /*<![CDATA[*/
+
+            var user = /*[[${message}]]*/'cool';
+
+
+            showalert("error",user, "Loan Request");
+
+            /*]]>*/
+
+        </script>
+        <!-- print object is new and active -->
+    </div>
+    <div th:case="'Cooperative account not existing'">
+
+        <script>
+
+            showalert("error","Cooperative account not existing", "Loan Request");
+
+        </script>
+        <!-- print object is new and active -->
+    </div>
+
+
+</th:block>
 </body>
 
 </html>

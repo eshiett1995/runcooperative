@@ -138,6 +138,9 @@ public class RegularLoanController {
 
           System.out.println("there is no cooperative account found please use the populate url to populate all your default entities");
 
+          model.addAttribute("customer", new LoanEntity());
+
+          model.addAttribute("isSuccessful", "Cooperative account not existing");
       }
 
         model.addAttribute("customer", new Loans());

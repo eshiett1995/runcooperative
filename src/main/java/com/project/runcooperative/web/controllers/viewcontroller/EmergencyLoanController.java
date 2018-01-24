@@ -74,25 +74,50 @@ public class EmergencyLoanController {
 
                         loanService.save(loanEntity);
 
+                        model.addAttribute("customer", new LoanEntity());
+
+                        model.addAttribute("isSuccessful", "true");
+
                     }else{
 
                         System.out.println("Cooperative doesn't have up to the amount requested");
+
+                        model.addAttribute("customer", new LoanEntity());
+
+                        model.addAttribute("isSuccessful", "Cooperative balance not enough");
+
 
                     }
 
                 }else{
 
                     System.out.println("The maximum amount you can loan is a N100,000");
+
+                    model.addAttribute("customer", new LoanEntity());
+
+                    model.addAttribute("isSuccessful", "The maximum amount you can loan is a N100,000");
+
                 }
 
             } else {
 
                 System.out.println("No customer found");
+
+                model.addAttribute("customer", new LoanEntity());
+
+                model.addAttribute("isSuccessful", "No customer found");
+
+                model.addAttribute("message", "No customer found");
+
             }
 
         }else{
 
             System.out.println("there is no cooperative account found please use the populate url to populate all your default entities");
+
+            model.addAttribute("customer", new LoanEntity());
+
+            model.addAttribute("isSuccessful", "Cooperative account not existing");
 
         }
 

@@ -157,22 +157,7 @@
                 <form action="#" th:action="@{/customer/add}" modelAttribute="customer" th:object="${customer}" method="post">
                     <!--Grid row-->
                     <div class="row">
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-12">
-
-                            <!--Name-->
-                            <select class="mdb-select" multiple = "multiple">
-                                <option value="" disabled="disabled" selected="selected">Title</option>
-                                <option value="1">Mr</option>
-                                <option value="2">Mrs</option>
-                                <option value="3">Miss</option>
-                            </select>
-
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-md-4 mb-r">
+                        <div class="col-md-6 mb-r">
 
                         <div class="md-form">
                             <input type="text" class="form-control" th:field="*{firstname}"></input>
@@ -183,7 +168,7 @@
                         <!--Grid column-->
 
                         <!--Grid column-->
-                        <div class="col-md-4 mb-r">
+                        <div class="col-md-6 mb-r">
 
                         <div class="md-form">
                             <input type="text" id="form2" class="form-control" th:field="*{lastname}"></input>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8"></meta>
@@ -162,28 +162,20 @@
                                             <th>Edit</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone Number</th>
-                                            <th>UserName</th>
-                                            <th>Priviledge</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Meagan Good</td>
-                                            <td>meagood@kanyin.com</td>
-                                            <td>+2349053516787</td>
-                                            <td>MeaGood</td>
-                                            <td>Admin</td>
-                                            <td>                                
-                                                <div class="text-center">
-                                                    <button class="btn btn-light-blue"><a href="/edit/personnel">Edit</a></button>
-                                                </div>
-                                            </td>
+                                        <tr th:each="personnel : $(personnel)">
+                                            <form role="form" th:action="@{/edit/personnel} + '/'+ ${personnel.id}" th:method="post">
+                                                <td th:text="${personnel.firstname} + '/'+ ${personnel.lastname}">Meagan Good</td>
+                                                <td th:text="${personnel.EmailAddress}">meagood@kanyin.com</td>
+                                                <td th:text="${personnel.PhoneNumber}">+2349053516787</td>
+                                                <td th:text="${personnel.EmailAddress}">MeaGood</td>
+                                                <td th:text="${personnel.Priviledge}">Admin</td>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <button class="btn btn-light-blue">Edit</button>
+                                                    </div>
+                                                </td>
+                                            </form>
                                         </tr>
                                        
                                     </tbody>
