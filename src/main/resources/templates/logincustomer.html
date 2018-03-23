@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"></link>
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../../css/mdb.min.css"></link>
+
+    <link rel="stylesheet" href="../../css/sweetalert2.css"></link>
+
+    <style>
+        .intro-2 {
+            background: url("https://mdbootstrap.com/img/Photos/Others/img%20(42).jpg")no-repeat center center;
+            background-size: cover;
+        }
+
+        .top-nav-collapse {
+            background-color: #9da4b1 !important;
+        }
+
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #9da4b1 !important;
+            }
+        }
+
+        .hm-gradient .full-bg-img {
+            background: -webkit-linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+            background: -webkit-gradient(linear,45deg, from(rgba(29, 236, 197, 0.4)), to(rgba(96, 0, 136, 0.4)));
+            background: linear-gradient(to 45deg, rgba(29, 236, 197, 0.4), rgba(96, 0, 136, 0.4) 100%);
+        }
+
+        .card {
+            background-color: rgba(229, 228, 255, 0.2);
+        }
+
+        .md-form .prefix {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        h6 {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 740px) {
+            .full-height,
+            .full-height body,
+            .full-height header,
+            .full-height header .view {
+                height: 1040px;
+            }
+        }
+
+        footer.page-footer {
+            background-color: #9da4b1;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Main Navigation -->
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong>RUN COOPERATIVE</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <section class="view intro-2 hm-gradient">
+        <div class="full-bg-img">
+            <div class="container flex-center">
+                <div class="d-flex align-items-center content-height">
+                    <div class="row flex-center pt-5 mt-3">
+                        <div class="col-md-6 text-center text-md-left mb-5">
+                            <div class="white-text">
+                                <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Welcome Customer!</h1>
+                                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s"></hr>
+                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga
+                                    nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea
+                                    dolor molestiae, quisquam iste, maiores. Nulla.</h6>
+                                <br></br>
+                                <a class="btn btn-outline-white btn-rounded wow fadeInLeft" data-wow-delay="0.3s"  href="#home" >Learn more</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-5 offset-xl-1">
+                            <!-- Form -->
+
+                                <!--Form with header-->
+                                <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                                    <div class="card-body">
+
+                                        <!--Header-->
+                                        <div class="form-header purple-gradient">
+                                            <h3><i class="fa fa-user mt-2 mb-2"></i> Log in:</h3>
+                                        </div>
+
+                                        <!--Body-->
+                                        <div class="md-form">
+                                            <i class="fa fa-envelope prefix white-text"></i>
+                                            <input type="text" id="login_email" class="form-control"></input>
+                                            <label for="login_email" class="white-text">Your email</label>
+                                        </div>
+
+                                        <div class="md-form">
+                                            <i class="fa fa-lock prefix white-text"></i>
+                                            <input type="password" id="login_password" class="form-control"></input>
+                                            <label for="login_password" class="white-text">Your password</label>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button id="login_btn" class="btn purple-gradient btn-lg">Sign in</button>
+                                            <hr class="hr-light mb-3 mt-4"></hr>
+
+                                            <div class="inline-ul text-center d-flex justify-content-center">
+                                                <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text"></i></a>
+                                                <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text"> </i></a>
+                                                <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text"> </i></a>
+                                            </div>
+                                        </div>
+                                        <h6 style="color:#ffffff"><i class="fa fa-user mt-2 mb-2" style="color:#ffffff"></i>  Admin? <a href="/" style="color: #34aef5">Admin Login</a></h6>
+                                    </div>
+                                </div>
+
+                            <!-- /.Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</header>
+<!-- Main Navigation -->
+
+
+
+<!--Main Layout-->
+<main>
+
+    <div class="container">
+
+        <!--Section: Features v.4-->
+        <section id="home" class="section feature-box wow fadeIn" data-wow-delay="0.3s">
+
+            <!--Section heading-->
+            <h1 class="section-heading  h1 pt-4">Why is it so great?</h1>
+            <!--Section description-->
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
+                esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+            <!--Grid row-->
+            <div class="row features-small">
+
+                <!--Grid column-->
+                <div class="col-md-4">
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-flag-checkered indigo-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">International</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-flask blue-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">Experimental</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-glass cyan-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">Relaxing</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-2 center-on-small-only flex-center">
+                    <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/iphone-portfolio1.png" alt="" class="z-depth-0"></img>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4">
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-heart deep-purple-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">Beloved</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-flash purple-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">Rapid</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mb-2">
+                        <div class="col-2">
+                            <i class="fa fa-magic pink-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h5 class="feature-title">Magical</h5>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda.</p>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--/Section: Features v.4-->
+
+
+
+    </div>
+
+</main>
+<!--Main Layout-->
+
+
+<!--Footer-->
+<footer class="page-footer center-on-small-only mt-5">
+
+    <!--Footer Links-->
+    <div class="container">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-3">
+                <h5 class="title">Footer Content </h5>
+                <p>Here you can use rows and columns here to organize your footer content.</p>
+            </div>
+            <!--/.First column-->
+
+            <hr class="w-100 clearfix d-md-none"></hr>
+
+            <!--Second column-->
+            <div class="col-md-2 ml-auto">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="#!">Link 1</a></li>
+                    <li><a href="#!">Link 2</a></li>
+                    <li><a href="#!">Link 3</a></li>
+                    <li><a href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+
+            <hr class="w-100 clearfix d-md-none"></hr>
+
+            <!--Third column-->
+            <div class="col-md-2 ml-auto">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="#!">Link 1</a></li>
+                    <li><a href="#!">Link 2</a></li>
+                    <li><a href="#!">Link 3</a></li>
+                    <li><a href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <!--/.Third column-->
+
+            <hr class="w-100 clearfix d-md-none"></hr>
+
+            <!--Fourth column-->
+            <div class="col-md-2 ml-auto">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="#!">Link 1</a></li>
+                    <li><a href="#!">Link 2</a></li>
+                    <li><a href="#!">Link 3</a></li>
+                    <li><a href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <!--/.Fourth column-->
+
+        </div>
+    </div>
+
+    <hr></hr>
+
+    <div class="container">
+        <!--Grid row-->
+        <div class="row mb-3">
+
+            <!--First column-->
+            <div class="col-md-12">
+
+                <ul class="list-unstyled d-flex justify-content-center mb-0 py-4">
+                    <li><a class="icons-sm fb-ic"><i class="fa fa-facebook white-text fa-lg"> </i></a></li>
+                    <li><a class="icons-sm tw-ic"><i class="fa fa-twitter white-text fa-lg"> </i></a></li>
+                    <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus white-text fa-lg"> </i></a></li>
+                    <li><a class="icons-sm li-ic"><i class="fa fa-linkedin white-text fa-lg"> </i></a></li>
+                    <li><a class="icons-sm ins-ic"><i class="fa fa-instagram white-text fa-lg"> </i></a></li>
+                    <li><a class="icons-sm pin-ic"><i class="fa fa-pinterest white-text fa-lg"> </i></a></li>
+                </ul>
+
+            </div>
+            <!--/First column-->
+        </div>
+        <!--/Grid row-->
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            &copy; 2017 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../../js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../js/mdb.min.js"></script>
+
+<script type="text/javascript" src="../../js/vendor/sweetalert/sweetalert2.all.min.js"></script>
+
+<script>
+    new WOW().init();
+</script>
+
+<script>
+
+    $("#login_btn").click(function(){
+
+
+        var json ='{"password" : ' + "\"" + $('#login_password').val() + "\"" + ',"emailAddress" : ' + "\"" + $('#login_email').val() + "\"" + '}';
+
+        $.ajax({
+            url: "http://localhost:8080/login/authenticatecustomer",
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: json,
+
+            success: function(response) {
+
+                if(response.successful){
+
+                    localStorage.setItem("email", response.responseMessage);
+
+                    localStorage.setItem("fullname", response.fullname);
+
+                    // similar behavior as clicking on a link
+                    window.location.href = "/customer-home";
+
+                }else{
+
+                    swal('Login Failed...', response.responseMessage , 'error');
+                }
+
+            }
+        });
+
+    });
+
+
+</script>
+
+</body>
+
+</html>

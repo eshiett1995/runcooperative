@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"></link>
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../../css/mdb.min.css"></link>
+
+    <!-- Your custom styles (optional) -->
+    <style>
+
+    </style>
+</head>
+
+<body class="fixed-sn white-skin">
+
+<!--Main Navigation-->
+<header>
+
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-4 fixed">
+        <ul class="custom-scrollbar list-unstyled">
+            <!-- Logo -->
+            <li class="logo-sn waves-effect">
+                <div class=" text-center">
+                    <a href="#" class="pl-0">
+                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" class=""/></img>
+                    </a>
+                </div>
+            </li>
+            <!--/. Logo -->
+
+            <!--Search Form-->
+            <li>
+                <form class="search-form" role="search" >
+                    <div class="form-group waves-effect">
+                        <input type="text" class="form-control" placeholder="Search"></input>
+                    </div>
+                </form>
+            </li>
+            <!--/.Search Form-->
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-tachometer"></i> Profile<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="/customer/edit" class="waves-effect">Edit</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-money mr-2"></i> Loans<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="/loans/type" class="waves-effect">Types</a>
+                                </li>
+                                <li><a href="/view/loanstatus" class="waves-effect">View Loan Status</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </ul>
+        <div class="sidenav-bg mask-strong"></div>
+    </div>
+    <!--/. Sidebar navigation -->
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+        <!-- SideNav slide-out button -->
+        <div class="float-left">
+            <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn mr-auto">
+            <p>RUN Cooperative</p>
+        </div>
+
+        <!--Navbar links-->
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+            <!-- Dropdown -->
+            <li class="nav-item">
+                <a class="nav-link waves-effect" href="/home"><i class="d-none d-md-inline-block"></i> <span class="clearfix d-none d-sm-inline-block">Home</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Profile</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="/">Log Out</a>
+                    <a class="dropdown-item" href="#">My account</a>
+                </div>
+            </li>
+
+        </ul>
+        <!--/Navbar links-->
+    </nav>
+    <!-- /.Navbar -->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main>
+    <div class="container-fluid">
+
+        <!--Section: Team v.1-->
+        <section class="section team-section">
+
+            <!--Grid row-->
+            <div class="row text-center">
+
+                <!-- Grid column -->
+                <div class="col-md-12 mb-r">
+
+                    <!--Card-->
+                    <div class="card card-cascade cascading-admin-card user-card">
+
+                        <!--Card Data-->
+                        <div class="admin-up d-flex justify-content-start">
+                            <i class="fa fa-users info-color py-4"></i>
+                            <div class="data">
+                                <h5 class="font-bold dark-grey-text">Edit Profile - <span class="text-muted">Complete your profile</span></h5>
+                            </div>
+                        </div>
+                        <!--/.Card Data-->
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!--Section heading-->
+                            <form action="#" th:action="@{/edit/save}" modelAttribute="customer" th:object="${customer}" method="post">
+                                <!--Grid row-->
+                                <div class="row text-left">
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <div class="md-form">
+                                            <input type="text" class="form-control" th:field="*{firstname}"></input>
+                                            <label for="form1" class="">First Name</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <div class="md-form">
+                                            <input type="text" id="form2" class="form-control" th:field="*{lastname}"></input>
+                                            <label for="form1" class="">Last Name</label>
+                                        </div>
+
+                                    </div>`
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row text-left">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <!--Email validation-->
+                                        <div class="md-form">
+                                            <i class="fa fa-envelope prefix"></i>
+                                            <input type="email" id="form9" class="form-control validate" th:field="*{EmailAddress}"></input>
+                                            <label for="form9" data-error="wrong" data-success="right">Type your email/UserName</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <div class="md-form">
+                                            <input value="+234" type="text" id="form16" class="form-control" maxlength="14"  th:field="*{PhoneNumber}"></input>
+                                            <label class="active" for="form6">Phone Number</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+
+                                <!--Grid row-->
+                                <div class="row text-left">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <!--Password validation-->
+                                        <div class="md-form">
+                                            <i class="fa fa-lock prefix"></i>
+                                            <input type="password" id="password" name="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ?'Must have at least 6 characters':''); if(this.checkValidity()) form.password_two.pattern = this.value;" class="form-control validate" required = "required"></input>
+                                            <label for="password" data-error="wrong" data-success="right">Type your password</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6 mb-r">
+
+                                        <!--Password validation-->
+                                        <div class="md-form">
+                                            <i class="fa fa-lock prefix"></i>
+                                            <input type="password" id="password_two" name="password_two" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ?'Please enter previous password':''); "class="form-control validate" required = "required"></input>
+                                            <label for="password_two" data-error="wrong" data-success="right">Verify Password</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-12 mb-r">
+
+                                        <div class="md-form">
+                                            <input type="text" id="form1" class="form-control" th:field="*{Address}"></input>
+                                            <label for="form1" class="">Address</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-r">
+
+                                        <div class="md-form">
+                                            <input value="N" type="text" id="form6" class="form-control" th:field="*{Salary}"></input>
+                                            <label class="active" for="form6">Salary</label>
+                                        </div>
+
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-4 mb-r">
+
+                                        <div class="md-form">
+                                            <input placeholder="in %" type="number" id="form5" class="form-control" th:field="*{FixedRate}"></input>
+                                            <label for="form5" class="active">Rate of Saving</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-md-4 mb-r">
+
+                                        <div class="md-form">
+                                            <input type="text" id="form11" class="form-control" disabled="">
+                                            <label for="form11" class="disabled">Account Number</label>
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                                <div class="text-center">
+                                    <button class="btn btn-default" type="submit">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Team v.1-->
+
+    </div>
+</main>
+<!--Main layout-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../../js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../js/mdb.min.js"></script>
+<!--Custom scripts-->
+<script>
+    // SideNav Initialization
+    $(".button-collapse").sideNav();
+
+    var container = document.querySelector('.custom-scrollbar');
+    Ps.initialize(container, {
+        wheelSpeed: 2,
+        wheelPropagation: true,
+        minScrollbarLength: 20
+    });
+</script>
+</body>
+
+</html>
