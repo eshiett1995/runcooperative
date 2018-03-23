@@ -64,7 +64,7 @@ public class TransactionController {
 
           TransactionEntity transaction = new TransactionEntity();
 
-          transaction.setDate_created(new LocalDate());
+          transaction.setDate();
 
           transaction.setDebiting_account(cooperativeAccount);
 
@@ -110,6 +110,8 @@ public class TransactionController {
             accountService.save(procurementAccount);
 
             TransactionEntity transaction = new TransactionEntity();
+
+            transaction.setDate();
 
             transaction.setDebiting_account(procurementAccount);
 

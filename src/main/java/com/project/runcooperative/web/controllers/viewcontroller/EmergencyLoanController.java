@@ -5,10 +5,8 @@ import com.project.runcooperative.web.controllers.restcontroller.models.Response
 import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.CustomerEntity;
 import com.project.runcooperative.web.entities.LoanEntity;
-import com.project.runcooperative.web.services.AccountService;
-import com.project.runcooperative.web.services.CustomerService;
-import com.project.runcooperative.web.services.LoanService;
-import com.project.runcooperative.web.services.LoanTypeService;
+import com.project.runcooperative.web.entities.TransactionEntity;
+import com.project.runcooperative.web.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +29,9 @@ public class EmergencyLoanController {
 
     @Autowired
     LoanService loanService;
+
+    @Autowired
+    TransactionService transactionService;
 
 
 
@@ -80,6 +81,12 @@ public class EmergencyLoanController {
 
                         accountService.save(cooperativeAccount);
 
+                        AccountEntity customerAcc = customerEntity.getAccounts().get(0);
+
+                        customerAcc.setAmount(customerAcc.getAmount() + loansrequest.getAmount());
+
+                        accountService.save(customerAcc);
+
                         loanEntity.setAmount(loansrequest.getAmount());
 
                         loanEntity.setLoanStatus("pending");
@@ -88,13 +95,29 @@ public class EmergencyLoanController {
 
                         loanService.save(loanEntity);
 
-                        ResponseModel r = new ResponseModel();
+                        if(transactionService.PerformTransaction(customerAcc, cooperativeAccount, loansrequest.getAmount(), TransactionEntity.TransactionType.Loan)){
 
-                        r.setSuccessful(true);
+                            ResponseModel r = new ResponseModel();
 
-                        r.setResponseMessage("Successful requested");
+                            r.setSuccessful(true);
 
-                        return new ResponseEntity<>(r, HttpStatus.OK);
+                            r.setResponseMessage("Successful requested");
+
+                            return new ResponseEntity<>(r, HttpStatus.OK);
+
+                        }else {
+
+                            ResponseModel r = new ResponseModel();
+
+                            r.setSuccessful(false);
+
+                            r.setResponseMessage("Error persisting data");
+
+                            return new ResponseEntity<>(r, HttpStatus.OK);
+
+                        }
+
+
 
                     }else{
 

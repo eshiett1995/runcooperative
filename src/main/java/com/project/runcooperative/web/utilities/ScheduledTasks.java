@@ -3,9 +3,11 @@ package com.project.runcooperative.web.utilities;
 
 import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.LoanEntity;
+import com.project.runcooperative.web.entities.TransactionEntity;
 import com.project.runcooperative.web.services.AccountService;
 import com.project.runcooperative.web.services.CustomerService;
 import com.project.runcooperative.web.services.LoanService;
+import com.project.runcooperative.web.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -21,6 +23,9 @@ public class ScheduledTasks {
 
     @Autowired
     CustomerService customerService;
+
+    @Autowired
+    TransactionService transactionService;
 
     @Autowired
     AccountService accountService;
@@ -58,6 +63,8 @@ public class ScheduledTasks {
 
                               cooperativeAccount.setAmount(cooperativeAccount.getAmount() + interestRate);
 
+  transactionService.PerformTransaction(cooperativeAccount,loan.getCustomerEntity().getAccounts().get(0),interestRate, TransactionEntity.TransactionType.Loan_Payment);
+
                               accountService.save(cooperativeAccount);
 
                           } else {
@@ -81,6 +88,8 @@ public class ScheduledTasks {
                               AccountEntity cooperativeAccount = accountService.getCooperativeAccount();
 
                               cooperativeAccount.setAmount(cooperativeAccount.getAmount() + interestRate);
+
+                              transactionService.PerformTransaction(loan.getCustomerEntity().getAccounts().get(0),cooperativeAccount,interestRate, TransactionEntity.TransactionType.Loan_Payment);
 
                               accountService.save(cooperativeAccount);
 

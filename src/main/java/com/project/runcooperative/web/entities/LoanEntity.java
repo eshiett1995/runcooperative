@@ -4,8 +4,13 @@ package com.project.runcooperative.web.entities;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 @JsonIdentityInfo(
@@ -18,6 +23,8 @@ public class LoanEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private long id;
+
+    private Date date;
 
     @OneToOne(targetEntity = LoanTypeEntity.class)
     @JoinColumn(name = "loan_id", nullable = false)
@@ -105,5 +112,31 @@ public class LoanEntity {
     public LoanEntity setLoanStatus(String loanStatus) {
         this.loanStatus = loanStatus;
         return this;
+    }
+
+    public Date getDate() {
+
+        return date;
+    }
+
+    public void setDate() {
+
+        SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+        DateTimeZone ng = DateTimeZone.forID("Africa/Lagos");
+
+        DateTime dt = new DateTime(ng);
+
+        try {
+
+            this.date = isoFormat.parse(dt.toString());
+
+        } catch (ParseException e) {
+
+            this.date = new Date();
+
+        }
+
+
     }
 }

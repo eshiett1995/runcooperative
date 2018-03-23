@@ -1,5 +1,6 @@
 package com.project.runcooperative.web.services.defaultinterface;
 
+import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.TransactionEntity;
 
 /**
@@ -8,5 +9,7 @@ import com.project.runcooperative.web.entities.TransactionEntity;
 public interface TransactionServiceInt {
 
     void save(TransactionEntity transactionEntity);
+
+    boolean PerformTransaction(AccountEntity creditAccount,AccountEntity debitAccount, double amount, TransactionEntity.TransactionType transactionType );
 
 }

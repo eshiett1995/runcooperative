@@ -5,9 +5,14 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
@@ -15,7 +20,7 @@ import javax.persistence.*;
 @Entity
 public class TransactionEntity{
 
-    public enum TransactionType { Purchases, Sales}
+    public enum TransactionType { Purchases, Sales,Loan,Loan_Payment}
 
 
     @Id
@@ -23,7 +28,7 @@ public class TransactionEntity{
     @Column(columnDefinition = "serial")
     private long id;
 
-    private LocalDate date_created;
+    private Date date;
 
     @ManyToOne(targetEntity = AccountEntity.class)
     @JoinColumn(name="debiting_account")
@@ -75,16 +80,6 @@ public class TransactionEntity{
         this.id = id;
     }
 
-
-    public LocalDate getDate_created() {
-        return date_created;
-    }
-
-
-    public void setDate_created(LocalDate date_created) {
-        this.date_created = date_created;
-    }
-
     public String getDetails() {
         return details;
     }
@@ -99,5 +94,28 @@ public class TransactionEntity{
 
     public void setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate() {
+
+        SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+        DateTimeZone ng = DateTimeZone.forID("Africa/Lagos");
+
+        DateTime dt = new DateTime(ng);
+
+        try {
+
+            this.date = isoFormat.parse(dt.toString());
+
+        } catch (ParseException e) {
+
+            this.date = new Date();
+
+        }
     }
 }
