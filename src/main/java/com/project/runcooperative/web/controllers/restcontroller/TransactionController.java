@@ -135,4 +135,18 @@ public class TransactionController {
 
 
     }
+
+  /**  @RequestMapping(value = "/transaction/eom", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ResponseModel> EOM(@RequestBody TransactionModel transactionEntity) {
+
+
+
+            return new ResponseEntity<>(responseModel, HttpStatus.OK);
+
+        }
+
+
+
+    } **/
+
 }
