@@ -798,16 +798,22 @@
 
 <script>
 
-    $('.datepicker').pickadate({
+    var input = $('.datepicker').pickadate();
 
-        onSet: function(context) {
+    input.pickadate('picker').on('set', function(event) {
+        if ( event.select ) {
+            alert('it worked');
 
-            alert("i just set the time");
+            alert(input.pickadate('picker').get('select'));
 
-            console.log('Just set stuff:', context)
+            alert(input.pickadate('picker').get('value'));
         }
+        else if ( 'clear' in event ) {
+            //to_picker.set('min', false)
+        }
+    })
 
-    });
+
 
     function showPurchaseModel() {
 
