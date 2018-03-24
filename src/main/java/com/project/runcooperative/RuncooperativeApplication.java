@@ -47,17 +47,17 @@ public class RuncooperativeApplication {
 	}
 
 
+**/
 
-
-	@Bean
+	/**@Bean
 	@ConfigurationProperties("session.datasource")
 	public EmbeddedDatabase sessionDataSource() {
 		return new EmbeddedDatabaseBuilder()
 				.setType(EmbeddedDatabaseType.H2)
 				.addScript("org/springframework/session/jdbc/schema-h2.sql").build();
-	}
+	} **/
 
-
+/**
 	@Bean(name = "springSessionJdbcOperations")
 	public JdbcTemplate springSessionJdbcOperations(@Qualifier("sessionDataSource") DataSource secondaryDataSource) {
 
