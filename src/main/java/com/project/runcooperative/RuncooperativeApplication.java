@@ -26,6 +26,7 @@ public class RuncooperativeApplication {
 	static PriviledgeService priviledgeService;
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(RuncooperativeApplication.class, args);
 
 
