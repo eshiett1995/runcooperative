@@ -93,23 +93,17 @@ public class Test {
 
 
 
-        CustomerEntity runcooperative2 = new CustomerEntity();
+        //CustomerEntity runcooperative2 = new CustomerEntity();
 
-        List<AccountEntity> accountEntities2 = new ArrayList<>();
+        //List<AccountEntity> accountEntities2 = new ArrayList<>();
 
         AccountEntity account2 = new AccountEntity();
-        account.setAmount(0);
-        account.setAccountholder(runcooperative);
-        account.setAccountNumber("1111");
+        account2.setAmount(0);
+        account2.setAccountholder(runcooperative);
+        account2.setAccountNumber("1111");
 
-        accountEntities.add(account);
+        accountEntities.add(account2);
 
-        runcooperative.setPhoneNumber("09053511105");
-        runcooperative.setEmailAddress("lloydd969@gmail.com");
-        runcooperative.setFirstname("Procurement");
-        runcooperative.setPassword("hihi");
-        runcooperative.setLastname("Account");
-        runcooperative.setAccounts(accountEntities);
 
 
 

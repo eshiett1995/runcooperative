@@ -32,7 +32,7 @@ public class RuncooperativeApplication {
 
 	}
 
-	@Bean
+	/**@Bean
 	@Primary
 	@ConfigurationProperties("main.datasource")
 	public DataSourceProperties mainDataSourceProperties() {
@@ -63,5 +63,7 @@ public class RuncooperativeApplication {
 
 		return new JdbcTemplate(secondaryDataSource);
 	}
+
+	**/
 
 }
