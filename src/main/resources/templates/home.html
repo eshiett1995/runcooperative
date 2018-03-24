@@ -798,7 +798,16 @@
 
 <script>
 
-    $('.datepicker').pickadate();
+    $('.datepicker').pickadate({
+
+        onSet: function(context) {
+
+            alert("i just set the time");
+
+            console.log('Just set stuff:', context)
+        }
+
+    });
 
     function showPurchaseModel() {
 
