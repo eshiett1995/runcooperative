@@ -1,8 +1,6 @@
 package com.project.runcooperative.web.controllers.restcontroller;
 
-import com.project.runcooperative.web.controllers.restcontroller.models.Loans;
-import com.project.runcooperative.web.controllers.restcontroller.models.ResponseModel;
-import com.project.runcooperative.web.controllers.restcontroller.models.TransactionModel;
+import com.project.runcooperative.web.controllers.restcontroller.models.*;
 import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.TransactionEntity;
 import com.project.runcooperative.web.services.*;
@@ -16,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Oto-obong on 22/03/2018.
@@ -136,17 +138,83 @@ public class TransactionController {
 
     }
 
-  /**  @RequestMapping(value = "/transaction/eom", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> EOM(@RequestBody TransactionModel transactionEntity) {
+    @RequestMapping(value = "/transaction/eom", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<EOMModel> EOM(@RequestBody DateModel dateModel) {
+
+        double inflow = 0.00;
+
+        double outflow = 0.00;
+
+        List<TransactionEntity> transactionsForTheMonth = new ArrayList<>();
+
+        List<TransactionEntity> transactionEntities = new ArrayList<>();
+
+        transactionEntities = transactionService.getAll();
+
+        if (transactionEntities.isEmpty()) {
+
+            EOMModel eomModel = new EOMModel();
+
+            eomModel.setInflow("0").setOutflow(String.valueOf("0")).setSuccessful(false).setResponsemessage("No transaction has been found")
+                    .setEOMBalance("0");
+
+            return new ResponseEntity<>(eomModel, HttpStatus.OK);
+
+        } else {
+
+            for (TransactionEntity transaction : transactionEntities) {
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(transaction.getDate());
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+
+                if (dateModel.getMonth() == month && dateModel.getYear() == year) {
+
+                    transactionsForTheMonth.add(transaction);
+
+                }
 
 
+            }
 
-            return new ResponseEntity<>(responseModel, HttpStatus.OK);
+            if(transactionsForTheMonth.isEmpty()){
+
+                EOMModel eomModel = new EOMModel();
+
+                eomModel.setInflow("0").setOutflow(String.valueOf("0")).setSuccessful(false).setResponsemessage("No transaction occurred this month")
+                        .setEOMBalance("0");
+
+                return new ResponseEntity<>(eomModel, HttpStatus.OK);
+
+            }else{
+
+
+                for (TransactionEntity transactionIntheMonth:transactionsForTheMonth) {
+
+                    if(transactionIntheMonth.getTransactionType() == TransactionEntity.TransactionType.Loan || transactionIntheMonth.getTransactionType() == TransactionEntity.TransactionType.Purchases )
+                    {
+
+                        outflow = outflow + transactionIntheMonth.getAmount();
+
+                    }else{
+
+                        inflow = inflow + transactionIntheMonth.getAmount();
+
+                    }
+                }
+
+                EOMModel eomModel = new EOMModel();
+
+                eomModel.setInflow(String.valueOf(inflow)).setOutflow(String.valueOf(outflow)).setSuccessful(true).setResponsemessage("Successful")
+                        .setEOMBalance(inflow > outflow ? String.valueOf(inflow - outflow) : "-" + String.valueOf(outflow - inflow) );
+
+                return new ResponseEntity<>(eomModel, HttpStatus.OK);
+
+            }
 
         }
-
-
-
-    } **/
+    }
 
 }
+

@@ -9,9 +9,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class TransactionModel {
 
+    private String date;
+
     private double amount;
 
     private String details;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public double getAmount() {
         return amount;

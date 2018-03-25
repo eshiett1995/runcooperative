@@ -7,6 +7,8 @@ import com.project.runcooperative.web.services.defaultinterface.TransactionServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Oto-obong on 22/03/2018.
  */
@@ -58,5 +60,11 @@ public class TransactionService implements TransactionServiceInt {
         }
 
 
+    }
+
+    @Override
+    public List<TransactionEntity> getAll() {
+
+        return (List<TransactionEntity>) transactionRepository.findAll();
     }
 }
