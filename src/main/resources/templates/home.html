@@ -832,14 +832,52 @@
 
             alert(day.year);
 
+            getEOMBalance(day.month,day.year);
+
             //alert(input.pickadate('picker').get('value'));
         }
         else if ( 'clear' in event ) {
             //to_picker.set('min', false)
         }
-    })
+    });
 
 
+
+    function getEOMBalance(month,year) {
+
+        var json ='{"month" : ' + month  + ',"year" : ' + year + '}';
+
+        $.ajax({
+            url: "https://run-cooperative.herokuapp.com/transaction/eom",
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: json,
+
+            success: function(response) {
+
+                if(response.successful){
+
+                    $("#inflow").text(response.inflow);
+
+                    $("#outflow").text(response.outflow);
+
+                    $("#balance").text(response.EOMBalance);
+
+                }else{
+
+                    $("#inflow").text(response.inflow);
+
+                    $("#outflow").text(response.outflow);
+
+                    $("#balance").text(response.EOMBalance);
+                }
+
+            }
+        });
+
+
+    }
 
     function showPurchaseModel() {
 
