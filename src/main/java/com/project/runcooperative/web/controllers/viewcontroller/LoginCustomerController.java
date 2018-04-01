@@ -1,6 +1,7 @@
 package com.project.runcooperative.web.controllers.viewcontroller;
 
 import com.project.runcooperative.web.controllers.restcontroller.models.Loans;
+import com.project.runcooperative.web.controllers.restcontroller.models.LoginModel;
 import com.project.runcooperative.web.controllers.restcontroller.models.PasswordModel;
 import com.project.runcooperative.web.controllers.restcontroller.models.ResponseModel;
 import com.project.runcooperative.web.entities.AccountEntity;
@@ -49,7 +50,7 @@ public class LoginCustomerController {
     }
 
     @RequestMapping(value = "/login/authenticatecustomer", method = RequestMethod.POST)
-    public ResponseEntity<ResponseModel> AuthenticateLogin(@RequestBody CustomerEntity customerEntity, Model model, BindingResult result, HttpServletRequest req, HttpServletResponse response) {
+    public ResponseEntity<ResponseModel> AuthenticateLogin(@RequestBody LoginModel customerEntity, Model model, BindingResult result, HttpServletRequest req, HttpServletResponse response) {
 
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors().toString());

@@ -20,7 +20,7 @@ import java.util.Date;
 @Entity
 public class TransactionEntity{
 
-    public enum TransactionType { Purchases, Sales,Loan,Loan_Payment}
+    public enum TransactionType { Purchases, Sales,Loan,Loan_Payment, Deposit}
 
 
     @Id

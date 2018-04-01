@@ -3,11 +3,11 @@ package com.project.runcooperative.web.controllers.restcontroller.models;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Oto-obong on 22/03/2018.
+ * Created by Oto-obong on 01/04/2018.
  */
 
 @Component
-public class TransactionModel {
+public class DepositModel {
 
     private String id;
 
@@ -48,4 +48,5 @@ public class TransactionModel {
     public void setDetails(String details) {
         this.details = details;
     }
+
 }
