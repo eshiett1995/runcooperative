@@ -33,7 +33,7 @@ public class DefaultCookieService implements CookieServiceInt {
         cookie.setSecure(false);
         cookie.setHttpOnly(true);
         cookie.setMaxAge(6000);
-        cookie.setDomain("localhost");
+        cookie.setDomain("run-cooperative.herokuapp.com");
         cookie.setPath("/");
 
         return cookie;
