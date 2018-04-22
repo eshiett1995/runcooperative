@@ -20,6 +20,7 @@ public class InterceptorConfiguration extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(genericInterceptors).excludePathPatterns("/")
                 .excludePathPatterns("/login/authenticate")
+                .excludePathPatterns("/view/customer")
                 .excludePathPatterns("/login/authenticatecustomer")
                 .excludePathPatterns("/populate")
                 .excludePathPatterns("/customerlogin")
