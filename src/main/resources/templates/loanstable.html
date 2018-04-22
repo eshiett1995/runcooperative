@@ -287,7 +287,7 @@
         function getLoanById(id){
 
 
-                $.get("http://localhost:8080/view/loans/" +id, function(data, status){
+                $.get("http://run-cooperative.herokuapp.com/view/loans/" +id, function(data, status){
 
                     $('#loanStatusModel').modal('show');
 
@@ -310,7 +310,7 @@
             var json ='{"loanStatus" : "accepted","id" : ' + "\"" + localStorage.getItem("loan-id") + "\"" + '}';
 
             $.ajax({
-                url: "http://localhost:8080/approve/loans",
+                url: "http://run-cooperative.herokuapp.com/approve/loans",
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -341,7 +341,7 @@
             var json ='{"loanStatus" : "declined","id" : ' + "\"" + localStorage.getItem("loan-id") + "\"" + '}';
 
             $.ajax({
-                url: "http://localhost:8080/approve/loans",
+                url: "http://run-cooperative.herokuapp.com/approve/loans",
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",

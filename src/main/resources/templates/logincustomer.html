@@ -209,7 +209,7 @@
         var json ='{"password" : ' + "\"" + $('#login_password').val() + "\"" + ',"emailAddress" : ' + "\"" + $('#login_email').val() + "\"" + '}';
 
         $.ajax({
-            url: "http://localhost:8080/login/authenticatecustomer",
+            url: "http://run-cooperative.herokuapp.com/login/authenticatecustomer",
             type: 'POST',
             dataType: 'json',
             contentType: "application/json; charset=utf-8",

@@ -35,7 +35,7 @@
 
     if(localStorage.getItem("email") === "undefined"){
 
-        window.location.replace("http://localhost:8080/customerlogin");
+        window.location.replace("http://run-cooperative.herokuapp.com/customerlogin");
     }
 
 </script>
@@ -595,7 +595,7 @@
            //var jsons = '{"amount":5000,"duration":6}';
 
            $.ajax({
-                url: "http://localhost:8080/loan/regular-add",
+                url: "http://run-cooperative.herokuapp.com/loan/regular-add",
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -632,7 +632,7 @@
             //var jsons = '{"amount":5000,"duration":6}';
 
             $.ajax({
-                url: "http://localhost:8080/loan/emergency/add",
+                url: "http://run-cooperative.herokuapp.com/loan/emergency/add",
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -667,7 +667,7 @@
             //var jsons = '{"amount":5000,"duration":6}';
 
             $.ajax({
-                url: "http://localhost:8080/customer/change-password",
+                url: "http://run-cooperative.herokuapp.com/customer/change-password",
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -704,7 +704,7 @@
         toastr["info"]("please wait, fetching loans..........")
 
         $.ajax({
-                url: "http://localhost:8080/"+ localStorage.getItem("email") +"/loans",
+                url: "http://run-cooperative.herokuapp.com/"+ localStorage.getItem("email") +"/loans",
                 type: 'GET',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -743,7 +743,7 @@
 
         localStorage.removeItem("email");
 
-        window.location.replace("http://localhost:8080/customerlogin");
+        window.location.replace("http://run-cooperative.herokuapp.com/customerlogin");
 
     }
 

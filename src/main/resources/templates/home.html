@@ -567,7 +567,7 @@
         var json ='{"month" : ' + month  + ',"year" : ' + year + '}';
         //  //https://run-cooperative.herokuapp.com
         $.ajax({
-            url: "http://localhost:8080/transaction/eom",
+            url: "http://run-cooperative.herokuapp.com/transaction/eom",
             type: 'POST',
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
@@ -629,7 +629,7 @@
         var json ='{"amount" : ' + $('#purchase_amount').val()  + ',"details" : ' + "\"" + $('#purchase_detail').val() + "\"" + '}';
 
         $.ajax({
-            url: "http://localhost:8080/transaction/purchase",
+            url: "http://run-cooperative.herokuapp.com/transaction/purchase",
             type: 'POST',
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
@@ -656,7 +656,7 @@
         var json ='{"amount" : ' + $('#purchase_amount').val()  + ',"details" : ' + "\"" + $('#purchase_detail').val() + "\"" + '}';
 
         $.ajax({
-            url: "http://localhost:8080/transaction/sales",
+            url: "http://run-cooperative.herokuapp.com/transaction/sales",
             type: 'POST',
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
