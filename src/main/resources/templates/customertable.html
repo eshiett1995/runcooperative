@@ -268,7 +268,9 @@
     function deleteCustomerById(id){
 
 
-        $.get("http://run-cooperative.herokuapp.com/delete/" +id, function(data, status){
+        alert('work bitch : ' + id);
+
+        $.get("https://run-cooperative.herokuapp.com/delete/" +id, function(data, status){
 
             if(data.isSuccessful=== false){
 
