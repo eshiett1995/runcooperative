@@ -51,7 +51,7 @@ public class CustomertableController {
 
     @ResponseBody
     @RequestMapping(value = "/delete/{customerid}", method = RequestMethod.GET)
-    public ResponseEntity<ResponseModel> DeleteCustomer(@PathVariable long customerid, Model model){
+    public ResponseEntity<ResponseModel> DeleteCustomer(@PathVariable Long customerid, Model model){
 
         CustomerEntity customerEntity = customerService.getCustomerById(customerid);
 

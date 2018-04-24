@@ -7,7 +7,7 @@ import java.util.List;
 public interface CustomerServiceInt {
 
     public void save(CustomerEntity customer);
-    public void delete();
+    public void delete(Long id);
 
     boolean AuthenticateCustomer(String email,String Password);
     public CustomerEntity findCustomerByEmailAndAccoutNumber(String email, String Accountnumber);

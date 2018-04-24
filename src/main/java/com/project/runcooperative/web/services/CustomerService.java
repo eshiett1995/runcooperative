@@ -24,7 +24,9 @@ public class CustomerService implements CustomerServiceInt {
     }
 
     @Override
-    public void delete() {
+    public void delete(Long id) {
+
+        customerrepository.delete(id);
 
     }
 
