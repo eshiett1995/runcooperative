@@ -272,21 +272,7 @@
 
         $.get("https://run-cooperative.herokuapp.com/delete/" +id, function(data, status){
 
-            if(data.isSuccessful=== false){
-
-                $('#deleteModal').modal('show');
-
-                $('#deleteModalText').text(data.responseMessage);
-
-
-            }else {
-
                 window.location.replace("http://run-cooperative.herokuapp.com/view/customer");
-
-            }
-
-
-
         });
     }
 
