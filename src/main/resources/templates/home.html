@@ -206,6 +206,60 @@
             </div>
         </div>
 
+
+        <div class="modal fade" id="modalPNL" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="height: 800px;">
+                <div class="modal-content" style="height: 800px;">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">End Of Month</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <input placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker"></input>
+                            <label for="date-picker-example">Pick a month...</label>
+                        </div>
+                        <div class="md-form mb-5 row">
+
+                            <div>
+                                <span>Cash inflow :</span>
+                            </div>
+
+                            <div>
+                                <span id="inflow"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="md-form mb-4 row">
+                            <div>
+                                <span>Cash outflow :</span>
+                            </div>
+
+                            <div>
+                                <span id="outflow"></span>
+                            </div>
+                        </div>
+
+                        <div class="md-form mb-4 row">
+                            <div>
+                                <span>Available balance :</span>
+                            </div>
+
+                            <div>
+                                <span id="balance"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
         <div class="modal fade" id="modalPurchaseForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -276,6 +330,7 @@
             <li><a class="btn-floating red" data-toggle="tooltip" onclick="showPurchaseModel()"  data-placement="right" title="Make Payment"><i class="fa fa-credit-card"></i></a></li>
             <li><a class="btn-floating yellow darken-1" onclick="showSalesModel()" data-toggle="tooltip" data-placement="right" title="Register Payment"><i class="fa fa-credit-card"></i></a></li>
             <li><a class="btn-floating green" onclick="showEOMModal()" data-toggle="tooltip" data-placement="right" title="End of Month"><i class="fa fa-cogs"></i></a></li>
+            <li><a class="btn-floating green" onclick="showPNLModal()" data-toggle="tooltip" data-placement="right" title="Profit and Loss"><i class="fa fa-cogs"></i></a></li>
         </ul>
 
     </div>
@@ -617,6 +672,12 @@
     function showEOMModal() {
 
         $('#modalEndOfMonth').modal('show');
+
+    }
+
+    function showPNLModal() {
+
+        $('#modalPNL').modal('show');
 
     }
 

@@ -12,9 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +46,24 @@ public class CustomertableController {
         model.addAttribute("customers", customerEntities);
 
         return "customertable";
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/delete/{customerid}", method = RequestMethod.GET)
+    public ResponseEntity<ResponseModel> DeleteCustomer(@PathVariable long customerid, Model model){
+
+        CustomerEntity customerEntity = customerService.getCustomerById(customerid);
+
+        customerService.delete(customerid);
+
+        ResponseModel responseModel = new ResponseModel();
+
+        responseModel.setSuccessful(true);
+
+        responseModel.setResponseMessage("the customer " + customerEntity.getFirstname() + " " + customerEntity.getLastname() + " has been successfully deleted");
+
+        return new ResponseEntity<>(responseModel, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customer/transaction", method = RequestMethod.GET)
