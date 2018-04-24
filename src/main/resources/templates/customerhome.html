@@ -5,7 +5,7 @@
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
     <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
-    <title>Material Design Bootstrap</title>
+    <title>RUN cooperative</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <!-- Bootstrap core CSS -->
@@ -50,7 +50,7 @@
             <li class="logo-sn waves-effect">
                 <div class=" text-center">
                     <a href="/customer-home" class="pl-0">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" class=""/>
+                        <img src="../../img/menu-icons/logo.png" class="img-fluid"></img>
                     </a>
                 </div>
             </li>
@@ -73,7 +73,7 @@
                             <ul>
                                 <li><a href="/loans/type" class="waves-effect">Types</a>
                                 </li>
-                                <li><a href="/view/loans" class="waves-effect">View Loan Status</a>
+                                <li><a onclick="getLoanStatusList()" class="waves-effect">View Loan Status</a>
                                 </li>
                             </ul>
                         </div>
@@ -246,7 +246,7 @@
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-envelope prefix"></i>
                                     <input type="number" id="regular_duration" class="form-control form-control-sm validate"></input>
-                                    <label data-error="wrong" data-success="right" for="regular_duration">Your duration</label>
+                                    <label data-error="wrong" data-success="right" for="regular_duration">Your duration(in months)</label>
                                 </div>
 
                                 <div class="md-form form-sm mb-5">
@@ -267,10 +267,6 @@
                             </div>
                             <!--Footer-->
                             <div class="modal-footer">
-                                <div class="options text-center text-md-right mt-1">
-                                    <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
-                                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
-                                </div>
                                 <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                             </div>
 
@@ -285,7 +281,7 @@
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-envelope prefix"></i>
                                     <input type="number" id="emergency_duration" class="form-control form-control-sm validate"></input>
-                                    <label data-error="wrong" data-success="right" for="emergency_duration">Your duration</label>
+                                    <label data-error="wrong" data-success="right" for="emergency_duration">Your duration(in months)</label>
                                 </div>
 
                                 <div class="md-form form-sm mb-5">
@@ -307,9 +303,6 @@
                             </div>
                             <!--Footer-->
                             <div class="modal-footer">
-                                <div class="options text-right">
-                                    <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
-                                </div>
                                 <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                             </div>
                         </div>

@@ -5,7 +5,7 @@
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
     <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
-    <title>Material Design Bootstrap</title>
+    <title>RUN cooperative</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <!-- Bootstrap core CSS -->
@@ -30,8 +30,8 @@
             <!-- Logo -->
             <li class="logo-sn waves-effect">
                 <div class=" text-center">
-                    <a href="#" class="pl-0">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" class=""/>
+                    <a href="/customer-home" class="pl-0">
+                        <img src="../../img/menu-icons/logo.png" class="img-fluid"></img>
                     </a>
                 </div>
             </li>
@@ -49,20 +49,12 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-tachometer"></i> Profile<i class="fa fa-angle-down rotate-icon"></i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="/customer/edit" class="waves-effect">Edit</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-money mr-2"></i> Loans<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="/loans/type" class="waves-effect">Types</a>
                                 </li>
-                                <li><a href="/view/loanstatus" class="waves-effect">View Loan Status</a>
+                                <li><a onclick="getLoanStatusList()" class="waves-effect">View Loan Status</a>
                                 </li>
                             </ul>
                         </div>
@@ -91,7 +83,7 @@
 
             <!-- Dropdown -->
             <li class="nav-item">
-                <a class="nav-link waves-effect" href="/home"><i class="d-none d-md-inline-block"></i> <span class="clearfix d-none d-sm-inline-block">Home</span></a>
+                <a class="nav-link waves-effect" href="/customer-home"><i class="d-none d-md-inline-block"></i> <span class="clearfix d-none d-sm-inline-block">Home</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,7 +142,7 @@
                                         <li>Rate is calculated geometically</li>
                                     </ul>
                                     </p>
-                                    <a class="btn btn-light-blue btn-rounded" href="/loan/regular">Request</a>
+                                    <a class="btn btn-light-blue btn-rounded" href="/customer-home">Request</a>
                                 </div>
                             </div>
 
@@ -183,7 +175,7 @@
                                         <li>Rate is fixed</li>
                                     </ul>
                                     </p>
-                                    <a class="btn btn-light-blue btn-rounded" href="/loan/emergency">Request</a>
+                                    <a class="btn btn-light-blue btn-rounded" href="/customer-home">Request</a>
                                 </div>
                             </div>
 
