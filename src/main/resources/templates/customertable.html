@@ -176,7 +176,7 @@
                                             </form>
                                             <td>
                                                  <div class="text-center d-flex flex-row">
-                                                      <button onclick="" class="btn btn-light-blue p-2">delete</button>
+                                                      <button  th:onclick="'javascript:getLoanById(\'' + ${customer.id} + '\');'" class="btn btn-light-blue p-2">delete</button>
                                                  </div>
                                             </td>
                                         </tr>
@@ -233,6 +233,17 @@
         });
 
     </script>
+
+<script>
+
+    function getLoanById(id){
+
+
+        alert('smallie');
+
+    }
+
+</script>
 </body>
 
 </html>
