@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <button class="btn purple-gradient btn-lg" type="submit">Sign in</button>
+                                        <button id="login_btn" class="btn purple-gradient btn-lg" type="submit">Sign in</button>
                                         <hr></hr>
                                     </div>
                                     <h6><i class="fa fa-user mt-2 mb-2" style="color:#ffffff"></i>  Not an Admin? <a href="/customerlogin" style="color: #57005a">Customer Login</a></h6>
@@ -163,6 +163,46 @@
     <script type="text/javascript" src="../js/mdb.min.js"></script>
     <script>
         new WOW().init();
+    </script>
+    <script>
+
+
+
+
+        $("#login_btn").click(function(){
+
+
+            var json ='{"password" : ' + "\"" + $('#login_password').val() + "\"" + ',"emailAddress" : ' + "\"" + $('#login_email').val() + "\"" + '}';
+
+            $.ajax({
+                url: "http://run-cooperative.herokuapp.com/login/authenticate",
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                data: json,
+
+                success: function(response) {
+
+                    if(response.successful){
+
+                        localStorage.setItem("email", response.responseMessage);
+
+                        localStorage.setItem("fullname", response.fullname);
+
+                        // similar behavior as clicking on a link
+                        window.location.href = "/home";
+
+                    }else{
+
+                        swal('Login Failed...', response.responseMessage , 'error');
+                    }
+
+                }
+            });
+
+        });
+
+
     </script>
 </body>
 </html>
