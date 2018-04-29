@@ -1,6 +1,7 @@
 package com.project.runcooperative.web.controllers.viewcontroller;
 
 import com.project.runcooperative.web.controllers.restcontroller.models.Loans;
+import com.project.runcooperative.web.controllers.restcontroller.models.Loans2;
 import com.project.runcooperative.web.controllers.restcontroller.models.ResponseModel;
 import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.CustomerEntity;
@@ -52,7 +53,7 @@ public class EmergencyLoanController {
 
 
     @RequestMapping(value = "/loan/emergency/add", method = RequestMethod.POST)
-    public ResponseEntity<ResponseModel> CreateEmergencyLoan(@RequestBody Loans loansrequest, Model model, BindingResult result){
+    public ResponseEntity<ResponseModel> CreateEmergencyLoan(@RequestBody Loans2 loansrequest, Model model, BindingResult result){
 
         //Here, it gets the loan ID...................
 

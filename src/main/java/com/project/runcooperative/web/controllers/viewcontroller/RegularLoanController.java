@@ -1,6 +1,7 @@
 package com.project.runcooperative.web.controllers.viewcontroller;
 
 import com.project.runcooperative.web.controllers.restcontroller.models.Loans;
+import com.project.runcooperative.web.controllers.restcontroller.models.Loans2;
 import com.project.runcooperative.web.controllers.restcontroller.models.ResponseModel;
 import com.project.runcooperative.web.entities.AccountEntity;
 import com.project.runcooperative.web.entities.CustomerEntity;
@@ -57,7 +58,7 @@ public class RegularLoanController {
 
     @ResponseBody
     @RequestMapping(value = "/loan/regular-add", method = RequestMethod.POST)
-    public ResponseEntity<ResponseModel> CreateRegularLoan(@RequestBody Loans loansrequest, Model model, BindingResult result){
+    public ResponseEntity<ResponseModel> CreateRegularLoan(@RequestBody Loans2 loansrequest, Model model, BindingResult result){
 
         //Here, it gets the loan ID to indicate the type of loan...................
 
