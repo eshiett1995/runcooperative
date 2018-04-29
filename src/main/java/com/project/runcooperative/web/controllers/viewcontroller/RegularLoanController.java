@@ -56,7 +56,7 @@ public class RegularLoanController {
     } **/
 
     @ResponseBody
-    @RequestMapping(value = "/loan/regular-add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/loan/regular-add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<ResponseModel> CreateRegularLoan(@RequestBody Loans loansrequest, Model model, BindingResult result){
 
         //Here, it gets the loan ID to indicate the type of loan...................
