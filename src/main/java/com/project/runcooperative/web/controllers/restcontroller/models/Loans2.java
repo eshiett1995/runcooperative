@@ -4,7 +4,7 @@ import com.project.runcooperative.web.entities.LoanEntity;
 
 import java.util.List;
 
-public class Loans {
+public class Loans2 {
 
     private Long id;
     private String firstname;
@@ -14,14 +14,12 @@ public class Loans {
     private boolean approve;
     private int Duration;
     private double Amount;
-    private LoanEntity loan;
-    private List<LoanEntity> loans;
 
     public Long getId() {
         return id;
     }
 
-    public Loans setId(Long id) {
+    public Loans2 setId(Long id) {
 
         this.id = id;
 
@@ -32,7 +30,7 @@ public class Loans {
         return firstname;
     }
 
-    public Loans setFirstname(String firstname) {
+    public Loans2 setFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
@@ -41,7 +39,7 @@ public class Loans {
         return lastname;
     }
 
-    public Loans setLastname(String lastname) {
+    public Loans2 setLastname(String lastname) {
         this.lastname = lastname;
         return this;
     }
@@ -58,7 +56,7 @@ public class Loans {
         return AccountNumber;
     }
 
-    public Loans setAccountNumber(String accountNumber) {
+    public Loans2 setAccountNumber(String accountNumber) {
         AccountNumber = accountNumber;
         return this;
     }
@@ -79,25 +77,6 @@ public class Loans {
         Amount = amount;
     }
 
-    public List<LoanEntity> getLoans() {
-
-        return loans;
-
-    }
-
-    public void setLoans(List<LoanEntity> loans) {
-
-        this.loans = loans;
-
-    }
-
-    public LoanEntity getLoan() {
-        return loan;
-    }
-
-    public void setLoan(LoanEntity loan) {
-        this.loan = loan;
-    }
 
     public boolean isApprove() {
         return approve;
