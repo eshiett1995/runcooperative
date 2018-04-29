@@ -15,7 +15,7 @@ public class Loans {
     private int Duration;
     private double Amount;
     private LoanEntity loan;
-    private List<LoanEntity> loans;
+    //private List<LoanEntity> loans;
 
     public Long getId() {
         return id;
@@ -79,7 +79,7 @@ public class Loans {
         Amount = amount;
     }
 
-    public List<LoanEntity> getLoans() {
+   /** public List<LoanEntity> getLoans() {
 
         return loans;
 
@@ -89,7 +89,7 @@ public class Loans {
 
         this.loans = loans;
 
-    }
+    } **/
 
     public LoanEntity getLoan() {
         return loan;
