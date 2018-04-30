@@ -98,6 +98,26 @@ public class RegularLoanController {
                           accountService.save(customerAcc);
 
 
+
+
+                          Double numberOfMonths = Double.valueOf(loansrequest.getDuration());
+
+                          Double D = ((Math.pow(1.01,numberOfMonths)) - 1 )/ (0.01 * Math.pow(1.01,numberOfMonths));
+
+                          Double principal = loansrequest.getAmount() / D;
+
+                          Double Total = principal * numberOfMonths;
+
+
+
+
+
+
+
+
+
+                          loanEntity.setPayback_amount(Total);
+
                           loanEntity.setHasbeen_paid(false);
 
                           loanEntity.setAmount(loansrequest.getAmount());
