@@ -88,6 +88,8 @@ public class EmergencyLoanController {
 
                         accountService.save(customerAcc);
 
+                        loanEntity.setHasbeen_paid(false);
+
                         loanEntity.setAmount(loansrequest.getAmount());
 
                         loanEntity.setLoanStatus("pending");
