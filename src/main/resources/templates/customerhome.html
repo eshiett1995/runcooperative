@@ -569,10 +569,12 @@
 
     });
 </script>
+
 <!-- /.JVectorMap -->
 
 
 <script>
+
     $(document).ready(function(){
 
         document.getElementById("welcome-msg").innerHTML = "welcome" + " "  + localStorage.getItem("fullname");
@@ -580,15 +582,12 @@
 
        $("#regular_request_btn").click(function(){
 
-
-           localStorage.setItem("email", "eshiett1995@gmail.com");
-
            var json ='{"accountNumber" : ' + $('#regular_accountNumber').val() + ',"emailAddress" : ' + "\"" + localStorage.getItem("email") + "\"" + ',"amount" : ' + $('#regular_amount').val() + ',"duration" : ' + $('#regular_duration').val() + '}';
 
            //var jsons = '{"amount":5000,"duration":6}';
 
            $.ajax({
-                url: "http://run-cooperative.herokuapp.com/loan/regular-add",
+                url: "/loan/regular-add", //run-cooperative.herokuapp.com
                 type: 'POST',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
