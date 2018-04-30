@@ -108,14 +108,6 @@ public class RegularLoanController {
 
                           Double Total = principal * numberOfMonths;
 
-
-
-
-
-
-
-
-
                           loanEntity.setPayback_amount(Total);
 
                           loanEntity.setHasbeen_paid(false);
