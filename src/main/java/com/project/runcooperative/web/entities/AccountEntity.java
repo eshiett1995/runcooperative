@@ -29,7 +29,7 @@ public class AccountEntity {
 
     private String AccountNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "holder_id")
 
     @JsonManagedReference

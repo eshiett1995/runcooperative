@@ -30,7 +30,7 @@ public class CustomerEntity{
     private String Salary;
     private int FixedRate;
     @OneToMany(cascade = CascadeType.ALL,
-    fetch = FetchType.LAZY,
+    fetch = FetchType.EAGER,
     mappedBy = "Accountholder")
     @JsonBackReference(value = "Accounts")
     private List<AccountEntity> Accounts = new ArrayList<AccountEntity>();
@@ -39,7 +39,7 @@ public class CustomerEntity{
 
     private Long daysjoined;
 
-    @OneToOne(fetch = FetchType.LAZY,
+    @OneToOne(fetch = FetchType.EAGER,
             cascade =  CascadeType.ALL,
             mappedBy = "customerEntity")
     @JsonBackReference(value = "loanEntity")
