@@ -63,7 +63,7 @@ public class EmergencyLoanController {
 
             AccountEntity cooperativeAccount = accountService.getCooperativeAccount();
 
-            CustomerEntity customerEntity = customerService.findCustomerByEmailAndAccoutNumber(loansrequest.getEmailAddress(), loansrequest.getAccountNumber());
+            CustomerEntity customerEntity = customerService.getCustomerByEmail(loansrequest.getEmailAddress());
 
             if (customerEntity.getEmailAddress() != null) {
 
@@ -87,6 +87,10 @@ public class EmergencyLoanController {
                         customerAcc.setAmount(customerAcc.getAmount() + loansrequest.getAmount());
 
                         accountService.save(customerAcc);
+
+
+
+                        loanEntity.setPayback_amount((11 * loansrequest.getAmount())/100);
 
                         loanEntity.setHasbeen_paid(false);
 
