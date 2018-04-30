@@ -68,8 +68,7 @@ public class RegularLoanController {
 
           AccountEntity cooperativeAccount = accountService.getCooperativeAccount();
 
-          CustomerEntity customerEntity = customerService.findCustomerByEmailAndAccoutNumber(loansrequest.getEmailAddress(), loansrequest.getAccountNumber());
-
+          CustomerEntity customerEntity = customerService.getCustomerByEmail(loansrequest.getEmailAddress());
 
           if (customerEntity.getEmailAddress() != null) {
 
