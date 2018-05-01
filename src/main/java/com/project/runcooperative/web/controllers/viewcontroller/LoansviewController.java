@@ -24,5 +24,18 @@ public class LoansviewController {
 
         return "loansview";
     }
+    @ResponseBody
+    @RequestMapping(value = "/view/loans/{id}", method = RequestMethod.GET)
+    public ResponseEntity<LoanEntity> ShowLoanStatus(@PathVariable long id){
+
+        LoanEntity loanEntity = loanService.findById(id);
+
+        Loans loans = new Loans();
+
+        loans.setLoan(loanEntity);
+
+        return new ResponseEntity<>(loanEntity, HttpStatus.OK);
+
+    }
 }
 

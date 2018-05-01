@@ -90,7 +90,6 @@ public class Test {
         runcooperative.setPassword("hihi");
         runcooperative.setLastname("Account");
         runcooperative.setAccounts(accountEntities);
-        runcooperative.setSalary("null");
 
 
 
