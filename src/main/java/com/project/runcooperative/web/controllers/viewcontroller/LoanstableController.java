@@ -48,9 +48,17 @@ public class LoanstableController {
 
         LoanEntity loanEntity = loanService.findById(Long.valueOf(loan.getId()));
 
-        loanEntity.setLoanStatus(loan.getLoanStatus());
+        if(loan.getLoanStatus().equalsIgnoreCase("declined")){
 
-        loanService.save(loanEntity);
+            loanService.delete(loanEntity.getId());
+
+
+        }else {
+
+            loanEntity.setLoanStatus(loan.getLoanStatus());
+
+            loanService.save(loanEntity);
+        }
 
         ResponseModel responseModel = new ResponseModel();
 
