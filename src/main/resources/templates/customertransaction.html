@@ -192,7 +192,7 @@
                                         <td th:text="${customer.EmailAddress}">2.41</td>
                                         <td th:text="${customer.PhoneNumber}">yes</td>
                                         <td th:text="${customer.Salary}">yes</td>
-                                        <td th:each="p:${customer.Accounts}" th:value="${p.id}" th:text="${p.AccountNumber}">Onions</td>
+                                        <td th:text="${customer.Accounts[0].AccountNumber}">Onions</td>
                                         <td th:text="${customer.FixedRate}">yes</td>
                                         <td>
                                             <div class="text-center">
