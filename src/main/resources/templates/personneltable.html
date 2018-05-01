@@ -180,6 +180,11 @@
                                                 </div>
                                             </td>
                                         </form>
+                                        <td>
+                                            <div class="text-center d-flex flex-row">
+                                                <button  th:onclick="'javascript:deletePersonnelById(\'' + ${personnel.id} + '\');'" class="btn btn-light-blue p-2">delete</button>
+                                            </div>
+                                        </td>
                                         </tr>
                                        
                                     </tbody>
@@ -234,6 +239,22 @@
         });
 
     </script>
+
+    <script>
+
+        function deletePersonnelById(id){
+
+
+            //alert('work bitch : ' + id);
+
+            $.get("https://run-cooperative.herokuapp.com/delete/personnel/" +id, function(data, status){
+
+                window.location.replace("http://run-cooperative.herokuapp.com/view/customer");
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
