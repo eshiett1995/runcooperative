@@ -244,9 +244,6 @@
 
         function deletePersonnelById(id){
 
-
-            //alert('work bitch : ' + id);
-
             $.get("https://run-cooperative.herokuapp.com/delete/personnel/" +id, function(data, status){
 
                 window.location.replace("http://run-cooperative.herokuapp.com/view/customer");
