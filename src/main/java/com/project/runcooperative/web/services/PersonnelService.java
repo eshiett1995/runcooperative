@@ -22,8 +22,9 @@ public class PersonnelService implements PersonnelServiceInt{
     }
 
     @Override
-    public void delete() {
+    public void delete(Long id) {
 
+        personnelRepository.delete(id);
     }
 
     @Override

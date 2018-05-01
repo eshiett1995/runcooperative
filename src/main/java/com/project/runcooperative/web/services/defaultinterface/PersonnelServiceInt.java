@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PersonnelServiceInt {
     void save(PersonnelEntity personnel);
-    void delete();
+    void delete(Long id);
     Boolean AuthenticatePersonnel(String email,String Password);
     PersonnelEntity GetPersonnelById(Long id);
     List<PersonnelEntity> GetAll();

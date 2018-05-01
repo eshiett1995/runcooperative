@@ -216,5 +216,85 @@ public class TransactionController {
         }
     }
 
+
+
+    @RequestMapping(value = "/transaction/pnl", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<PNLModel> pnl(@RequestBody DateModel dateModel) {
+
+        double inflow = 0.00;
+
+        double outflow = 0.00;
+
+        List<TransactionEntity> transactionsForTheMonth = new ArrayList<>();
+
+        List<TransactionEntity> transactionEntities = new ArrayList<>();
+
+        transactionEntities = transactionService.getAll();
+
+        if (transactionEntities.isEmpty()) {
+
+            EOMModel eomModel = new EOMModel();
+
+            eomModel.setInflow("0").setOutflow(String.valueOf("0")).setSuccessful(false).setResponsemessage("No transaction has been found")
+                    .setEOMBalance("0");
+
+            return new ResponseEntity<>(new PNLModel(), HttpStatus.OK);
+
+        } else {
+
+            for (TransactionEntity transaction : transactionEntities) {
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(transaction.getDate());
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+
+                if (dateModel.getMonth() == month && dateModel.getYear() == year) {
+
+                    transactionsForTheMonth.add(transaction);
+
+                }
+
+
+            }
+
+            if(transactionsForTheMonth.isEmpty()){
+
+                EOMModel eomModel = new EOMModel();
+
+                eomModel.setInflow("0").setOutflow(String.valueOf("0")).setSuccessful(false).setResponsemessage("No transaction occurred this month")
+                        .setEOMBalance("0");
+
+                return new ResponseEntity<>(new PNLModel(), HttpStatus.OK);
+
+            }else{
+
+
+                for (TransactionEntity transactionIntheMonth:transactionsForTheMonth) {
+
+                    if(transactionIntheMonth.getTransactionType() == TransactionEntity.TransactionType.Loan || transactionIntheMonth.getTransactionType() == TransactionEntity.TransactionType.Purchases )
+                    {
+
+                        outflow = outflow + transactionIntheMonth.getAmount();
+
+                    }else{
+
+                        inflow = inflow + transactionIntheMonth.getAmount();
+
+                    }
+                }
+
+                EOMModel eomModel = new EOMModel();
+
+                eomModel.setInflow(String.valueOf(inflow)).setOutflow(String.valueOf(outflow)).setSuccessful(true).setResponsemessage("Successful")
+                        .setEOMBalance(inflow > outflow ? String.valueOf(inflow - outflow) : "-" + String.valueOf(outflow - inflow) );
+
+                return new ResponseEntity<>(new PNLModel(), HttpStatus.OK);
+
+            }
+
+        }
+    }
+
 }
 
