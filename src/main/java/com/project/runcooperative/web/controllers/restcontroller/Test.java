@@ -75,6 +75,7 @@ public class Test {
         account.setAccountholder(runcooperative);
         account.setAccountNumber("0000");
 
+
         accountEntities.add(account);
 
         SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -89,6 +90,7 @@ public class Test {
         runcooperative.setPassword("hihi");
         runcooperative.setLastname("Account");
         runcooperative.setAccounts(accountEntities);
+        runcooperative.setSalary("null");
 
 
 
