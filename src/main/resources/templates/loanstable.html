@@ -283,7 +283,7 @@
         function getLoanById(id){
 
 
-                $.get("http://run-cooperative.herokuapp.com/view/loans/" +id, function(data, status){
+                $.get("/view/loans/" +id, function(data, status){
 
                     $('#loanStatusModel').modal('show');
 
