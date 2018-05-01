@@ -696,7 +696,7 @@
         toastr["info"]("please wait, fetching loans..........")
 
         $.ajax({
-                url: "http://run-cooperative.herokuapp.com/"+ localStorage.getItem("email") +"/loans",
+                url: "/"+ localStorage.getItem("email") +"/loans",
                 type: 'GET',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
@@ -705,19 +705,27 @@
                 success: function(response) {
                     toastr.clear();
 
+
+
                     if(response.loans.length === 0){
 
                         swal('Success', "No loans found" , 'success');
 
                     }else{
 
+                        console.log("i am here");
+
                         $("#loanStatusTable tr").remove();
+
+
 
                         $('#modalLoanStatus').modal('show');
 
                         jQuery.each(response.loans, function(i,data) {
 
-                            $("#loanStatusTable").append("<tr><td>" + data.id[i] + "</td><td>" + data.amount[i] + "</td><td>" + data.loanStatus[i] + "</td></tr>");
+                            console.log("this is the data: " + data);
+
+                            $("#loanStatusTable").append("<tr><td>" + data.id + "</td><td>" + data.amount + "</td><td>" + data.loanStatus + "</td></tr>");
 
 
                         });
