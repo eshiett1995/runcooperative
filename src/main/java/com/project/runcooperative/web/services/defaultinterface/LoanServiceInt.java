@@ -9,6 +9,8 @@ public interface LoanServiceInt {
 
     void save(LoanEntity loanEntity);
 
+    void delete(Long id);
+
     LoanEntity findById(Long id);
 
     boolean isEligibleForLoan(Long dateJoined);

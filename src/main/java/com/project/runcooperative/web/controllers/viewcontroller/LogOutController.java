@@ -28,7 +28,7 @@ public class LogOutController {
             cookie.setSecure(false);
             cookie.setHttpOnly(true);
             cookie.setMaxAge(6000);
-            cookie.setDomain("run-cooperative.herokuapp.com");
+            cookie.setDomain("run-cooperative.herokuapp.com");//
             cookie.setPath("/");
 
             response.addCookie(cookie);
