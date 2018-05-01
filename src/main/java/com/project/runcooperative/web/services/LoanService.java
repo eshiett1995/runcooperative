@@ -25,6 +25,13 @@ public class LoanService implements LoanServiceInt {
     }
 
     @Override
+    public void delete(Long id) {
+
+        loanRepository.delete(id);
+
+    }
+
+    @Override
     public LoanEntity findById(Long id) {
 
         List<LoanEntity> loans = new ArrayList<>();
