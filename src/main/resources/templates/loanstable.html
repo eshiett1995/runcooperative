@@ -285,11 +285,14 @@
 
                 $.get("/view/loans/" +id, function(data, status){
 
+                    console.log(data);
+
                     $('#loanStatusModel').modal('show');
 
                     //console.log(data);
 
                     localStorage.setItem("loan-id", id);
+
 
                     $('#loanStatusText').text(data.customerEntity.firstname + " " + data.customerEntity.lastname
                         + " requested for an " + data.loanTypeEntity.loanTypeName + " of " + data.amount + " Naira" + " " +
