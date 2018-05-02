@@ -76,8 +76,8 @@
                             <ul>
                                 <li><a href="/view/loans" class="waves-effect">Alerts</a>
                                 </li>
-                                <li><a href="/view/loansview" class="waves-effect">View</a>
-                                </li>
+                                <!--<li><a href="/view/loansview" class="waves-effect">View</a>
+                                </li>-->
                             </ul>
                         </div>
                     </li>
@@ -241,7 +241,7 @@
                                         <td th:text="${customer.EmailAddress}">2.41</td>
                                         <td th:text="${customer.PhoneNumber}">yes</td>
                                         <td th:text="${customer.Salary}">yes</td>
-                                        <td th:each="p:${customer.Accounts}" th:value="${p.id}" th:text="${p.AccountNumber}">Onions</td>
+                                        <td th:text="${customer.Accounts[0].AccountNumber}">Onions</td>
                                         <td th:text="${customer.FixedRate}">yes</td>
                                         <td>
                                             <div class="text-center d-flex flex-row">
