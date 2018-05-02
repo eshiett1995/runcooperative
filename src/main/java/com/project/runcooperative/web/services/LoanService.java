@@ -38,6 +38,8 @@ public class LoanService implements LoanServiceInt {
 
         loans = (List<LoanEntity>) loanRepository.findAll();
 
+        System.out.print("hello moto");
+
         System.out.print(loans.toString());
 
         for (LoanEntity loan:loans) {
