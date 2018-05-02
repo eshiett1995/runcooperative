@@ -288,7 +288,7 @@
                     localStorage.setItem("loan-id", id);
 
 
-                    $('#loanStatusText').text(data.loanTypeEntity.loanEntity.customerEntity.firstname + " " + data.loanTypeEntity.loanEntity.customerEntity.lastname
+                    $('#loanStatusText').text(data.customerEntity.accounts[0].firstname + " " + data.loanTypeEntity.loanEntity.customerEntity.lastname
                         + " requested for an " + data.loanTypeEntity.loanTypeName + " of " + data.amount + " Naira" + " " +
                         "for a period of " + data.duration + " months..................status: " + data.loanStatus);
 
