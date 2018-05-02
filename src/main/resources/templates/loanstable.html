@@ -273,6 +273,7 @@
 
         function getLoanById(id){
 
+            alert(id);
 
                 $.get("/view/loans/" +id, function(data, status){
 
@@ -281,6 +282,8 @@
                     $('#loanStatusModel').modal('show');
 
                     //console.log(data);
+
+                    alert("the id is: " + id);
 
                     localStorage.setItem("loan-id", id);
 
