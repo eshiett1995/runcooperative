@@ -34,7 +34,9 @@ public class LoanService implements LoanServiceInt {
     @Override
     public LoanEntity findById(Long id) {
 
-        List<LoanEntity> loans = new ArrayList<>();
+        return loanRepository.findById(id);
+
+        /**List<LoanEntity> loans = new ArrayList<>();
 
         loans = (List<LoanEntity>) loanRepository.findAll();
 
@@ -49,7 +51,7 @@ public class LoanService implements LoanServiceInt {
             else {return new LoanEntity();}
 
         }
-        return new LoanEntity();
+        return new LoanEntity(); **/
     }
 
     @Override
