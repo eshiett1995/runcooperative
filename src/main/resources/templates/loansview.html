@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -13,8 +13,9 @@
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="../css/mdb.min.css"></link>
     <!-- DataTables.net -->
-    <link rel="stylesheet" type="text/css" href="../../js/vendor/datatables/css/dataTables.bootstrap4.min.css"></link>
- 
+    <link rel="stylesheet" type="text/css" href="../js/vendor/datatables/css/dataTables.bootstrap4.min.css"></link>
+
+    <link rel="stylesheet" href="../../css/sweetalert2.css"></link>
     <!-- Your custom styles (optional) -->
     <style>
 
@@ -128,6 +129,7 @@
 
     <!--Main layout-->
     <main>
+
         <div class="container-fluid mb-5">
 
             <!--Section: Basic examples-->
@@ -136,7 +138,7 @@
                 <div class="row">
                     
                     <div class="col-md-12">
-                            <h1 class="section-heading h1">Request Loan</h1>
+                        <h1 class="section-heading h1">Loans</h1>                         
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatables" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -144,30 +146,31 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Phone Number</th>
-                                            <th>Salary</th>
-                                            <th>Account</th>
-                                            <th>Savings Rate(%)</th>
-                                            <th>Edit</th>
+                                            <th>Loan Type</th>
+                                            <th>Amount Loaned</th>
+                                            <th>Amount Remaining</th>
+                                            <th>Time Left</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr th:each="customer : ${customers}">
-                                            <form role="form" th:action="@{/regularloan/customer} + '/'+ ${customer.id}" th:method="post">
-                                                <td th:text="${customer.firstname} + '/'+ ${customer.lastname}">Onions</td>
-                                                <td th:text="${customer.EmailAddress}">2.41</td>
-                                                <td th:text="${customer.PhoneNumber}">yes</td>
-                                                <td th:text="${customer.Salary}">yes</td>
-                                                <td th:each="p:${customer.Accounts}" th:value="${p.id}" th:text="${p.AccountNumber}">Onions</td>
-                                                <td th:text="${customer.FixedRate}">yes</td>
-                                                <td>
-                                                <div class="text-center">
-
-                                                    <button class="btn btn-light-blue">Request Regular Loan</button>
-                                                </div>
-                                                </td>
-                                            </form>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Loan Type</th>
+                                            <th>Amount Loaned</th>
+                                            <th>Amount Remaining</th>
+                                            <th>Time Left</th>
                                         </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <tr th:each="loan : ${loans}">
+                                            <td th:text="${loan.customerEntity.firstname} + ' '+ ${loan.customerEntity.lastname}">Meagan Good</td>
+                                            <td th:text="${loan.customerEntity.EmailAddress}">meagood@kanyin.com</td>
+                                            <td th:text="${loan.loanTypeEntity.loanTypeName}">+2349053516787</td>
+                                            <td th:text="${loan.amount}">0.00</td>
+                                            <td th:text="${loan.payback_amount}">0.00</td>
+                                            <td th:text="${loan.duration}">0</td>
+                                    </tr>
                                        
                                     </tbody>
                                 </table>
@@ -189,16 +192,18 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <script type="text/javascript" src="../../js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../../js/mdb.min.js"></script>
     <!-- DataTables.net -->
-    <script type="text/javascript" src="../js/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="../js/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="../../js/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="../../js/vendor/sweetalert/sweetalert2.all.min.js"></script>
+
     <!--Custom scripts-->
     <script>
         // SideNav Initialization
@@ -221,6 +226,10 @@
         });
 
     </script>
+
+
+
+
 </body>
 
 </html>

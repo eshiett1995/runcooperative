@@ -76,7 +76,9 @@
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-money mr-2"></i> Loans<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="/view/loans" class="waves-effect">View</a>
+                                <li><a href="/view/loans" class="waves-effect">Alerts</a>
+                                </li>
+                                <li><a href="/view/loansview" class="waves-effect">View</a>
                                 </li>
                             </ul>
                         </div>
@@ -84,7 +86,7 @@
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-th"></i> Financial Reports<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="../dashboards/v-2.html" class="waves-effect">Profit and Loss</a>
+                                <li><a onclick="showPNLModal()" class="waves-effect">Profit and Loss</a>
                                 </li>
                             </ul>
                         </div>
@@ -224,7 +226,7 @@
                         <div class="md-form mb-5 row">
 
                             <div>
-                                <span>Cash inflow :</span>
+                                <span>Total Income :</span>
                             </div>
 
                             <div>
@@ -235,7 +237,7 @@
 
                         <div class="md-form mb-4 row">
                             <div>
-                                <span>Cash outflow :</span>
+                                <span>Total Expenses :</span>
                             </div>
 
                             <div>
@@ -245,7 +247,7 @@
 
                         <div class="md-form mb-4 row">
                             <div>
-                                <span>Available balance :</span>
+                                <span>Profit/Loss :</span>
                             </div>
 
                             <div>
