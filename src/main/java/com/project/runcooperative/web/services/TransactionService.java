@@ -9,10 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by Oto-obong on 22/03/2018.
- */
-
 
 @Service
 public class TransactionService implements TransactionServiceInt {

@@ -1,15 +1,10 @@
 package com.project.runcooperative.web.services;
 
-
 import com.project.runcooperative.web.services.defaultinterface.CookieServiceInt;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-
-/**
- * Created by Oto-obong on 18/10/2017.
- */
 
 @Service
 public class DefaultCookieService implements CookieServiceInt {
@@ -39,6 +34,4 @@ public class DefaultCookieService implements CookieServiceInt {
         return cookie;
 
     }
-
-
 }

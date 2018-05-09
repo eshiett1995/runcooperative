@@ -6,10 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * Created by Oto-obong on 01/02/2018.
- */
-
 @Configuration
 public class InterceptorConfiguration extends WebMvcConfigurerAdapter {
 
@@ -35,6 +31,4 @@ public class InterceptorConfiguration extends WebMvcConfigurerAdapter {
                 .excludePathPatterns("/error");
 
     }
-
-
 }
